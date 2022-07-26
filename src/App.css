@@ -2,37 +2,118 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header-cotainer{
+  display: flex;
+  background-color: #fff4ac;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content:center;
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.logo{
+  border: #070706;
+  align-items: baseline;
+  align-self:flex-start;
+ flex-direction: row;
+margin-left: 15px;
+margin-top:25px;
+border-radius: 15px;
+box-shadow: 5px 5px 5px rgb(182, 170, 94);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.user_avatar--active{
+  vertical-align: middle;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border-color: #000000;
+  border-style: solid;
+  box-shadow: 5px 5px 5px rgb(182, 170, 94);
+
+}
+.h6{
+  font-family:Arial, Helvetica, sans-serif;
+  font-size:larger;
+  
+}
+
+.user_card--active{
+  display: flex;
+  flex-direction:column;
+ align-items: center;
+ justify-content: center;
+ flex-flow: column wrap;
+ margin: 20px;
+ margin-top: 30px;
+}
+
+.navBar {
+  display:flex;
+  flex-direction: row;
+  background-color: #ffe500;
+  height: 50px;
+  
+  
+}
+
+.bar {
+  display:flex;
+  flex-direction: column;
+  border-right: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+  border-top: 1px solid #000000;
+  width: 50.33%;
+  margin: 0px;
+  padding-top: 15px;
+  text-align: center;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: small;
+  font-weight: bold;
+ 
+
+}
+
+.allArticles_avatar{
+  vertical-align: middle;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border-color: #000000;
+  border-style: solid;
+  box-shadow: 5px 5px 5px rgb(182, 170, 94);
+  margin-top: 10px;
+}
+
+.itemCard{
   display: flex;
   flex-direction: column;
+}
+
+.Partone_itemCard{
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: column;
+  border-style: solid;
+  margin: 30px;
 }
 
-.App-link {
-  color: #61dafb;
+.article_page-button{
+  margin-bottom: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Article_container{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-style: solid;
+  margin: 30px;
+}
+
+.comment_container{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-style: solid;
+  margin: 30px;
 }
