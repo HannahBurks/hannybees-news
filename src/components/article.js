@@ -56,7 +56,7 @@ function getAvatarUrl(user){
 <div className='Individual_article_container'>
     <div className='Article_container'>
 <h2>{articleData.title}</h2>
-<img className = 'allArticles_avatar'src={getAvatarUrl(articleData.author)}/>
+<img className = 'singleArticle_avatar'src={getAvatarUrl(articleData.author)}/>
 <h3> Author: {articleData.author}</h3>
 <h2> Article Votes:{articleData.votes}</h2>
 <p>{articleData.body}</p>
@@ -64,6 +64,7 @@ function getAvatarUrl(user){
 <h2>Comment section</h2>
 {commentData.map((comment)=> {
     return (<div className = "comment_container">
+        <img className = 'commenter_avatar'src={getAvatarUrl(comment.author)}/>
         <h5>user:{comment.author}</h5>
         <h6>Comment votes:{comment.votes}</h6>
     <p>{comment.body}</p>

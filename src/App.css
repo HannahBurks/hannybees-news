@@ -117,3 +117,25 @@ box-shadow: 5px 5px 5px rgb(182, 170, 94);
   border-style: solid;
   margin: 30px;
 }
+
+.singleArticle_avatar{
+  vertical-align: middle;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border-color: #000000;
+  border-style: solid;
+  box-shadow: 5px 5px 5px rgb(182, 170, 94);
+  margin-top: 10px;
+}
+
+.commenter_avatar{
+  vertical-align: middle;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border-color: #000000;
+  border-style: solid;
+  box-shadow: 5px 5px 5px rgb(182, 170, 94);
+  margin-top: 10px;
+}
