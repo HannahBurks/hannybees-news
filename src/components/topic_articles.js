@@ -1,11 +1,11 @@
 import { useEffect } from "react";
-    import {Routes, Route, useNavigate} from 'react-router-dom';
+    import {Routes, Route, useNavigate, useLocation} from 'react-router-dom';
     import { useState } from "react";
     import '../App.css';
     import Article from './article'
     
 
-    export default function GetTopicData(){
+    export default function Categories(){
         const [articleData, setArticleData] = useState([])
         const [authorData, setAuthorData] = useState([])
         const [isLoading, setIsLoading] = useState(true);
@@ -29,31 +29,12 @@ import { useEffect } from "react";
      return result
     }
     
+    const categoryName = useLocation().state.name
+
+   
+
         useEffect(() => {
-            if(window.location.pathname === "/cooking")
-        fetch('https://hannybees-news-app.herokuapp.com/api/articles?topic=cooking').then((response) => {
-            return response.json();
-          })
-          .then((data) => {
-            setArticleData(() => {
-                return data.articles;
-                
-            })
-            setIsLoading(false);
-        })
-        if(window.location.pathname === "/coding")
-        fetch('https://hannybees-news-app.herokuapp.com/api/articles?topic=coding').then((response) => {
-            return response.json();
-          })
-          .then((data) => {
-            setArticleData(() => {
-                return data.articles;
-                
-            })
-            setIsLoading(false);
-        })
-        if(window.location.pathname === "/football")
-        fetch('https://hannybees-news-app.herokuapp.com/api/articles?topic=football').then((response) => {
+        fetch(`https://hannybees-news-app.herokuapp.com/api/articles?topic=${categoryName}`).then((response) => {
             return response.json();
           })
           .then((data) => {
@@ -65,11 +46,12 @@ import { useEffect } from "react";
         })
     },[]);
     
-    
+    const capitalizedCategory = categoryName[0].toUpperCase() + categoryName.substring(1)
     
     
     return (
-        <div>
+             <div className ={`${categoryName}itemCard`}>
+            <h2 className={`${categoryName}Header`}> {capitalizedCategory} Articles</h2>
              {articleData.map((article) => {
                 return (
                   <div key={article.article_id} className="Partone_itemCard">
