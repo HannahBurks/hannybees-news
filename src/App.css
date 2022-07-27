@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Playfair+Display+SC&family=Vidaloka&display=swap');
+
 .App {
   text-align: center;
 }
@@ -20,6 +23,21 @@ margin-left: 15px;
 margin-top:25px;
 border-radius: 15px;
 box-shadow: 5px 5px 5px rgb(182, 170, 94);
+}
+
+.mainHeader{
+  display: flex;
+  text-align: center;
+  flex-direction: row;
+  margin-top:60px;
+font-size: x-large;
+margin-left: 15px;
+font-family: 'Playfair Display SC', serif;
+font-weight:bolder;
+background-color: #ffffff;
+margin-bottom:80px; 
+box-shadow: 5px 5px 5px rgb(182, 170, 94);
+
 }
 
 .user_avatar--active{
@@ -88,6 +106,7 @@ box-shadow: 5px 5px 5px rgb(182, 170, 94);
 .itemCard{
   display: flex;
   flex-direction: column;
+ background-image: url('https://static.vecteezy.com/system/resources/thumbnails/005/018/822/small/hexagon-mosaic-background-abstract-orange-honeycomb-free-vector.jpg')
 }
 
 .Partone_itemCard{
@@ -100,7 +119,7 @@ box-shadow: 5px 5px 5px rgb(182, 170, 94);
   padding-top:30px;
   padding-left:10px;
   padding-right:10px;
-
+background-color:  #fff4ac;;
 }
 
 .article_page-button{
@@ -145,3 +164,226 @@ box-shadow: 5px 5px 5px rgb(182, 170, 94);
   box-shadow: 5px 5px 5px rgb(182, 170, 94);
   margin-top: 10px;
 }
+
+
+
+*{ box-sizing: border-box; }
+html,body{ height: 100%; width: 100%; }
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:400,700,300|Ubuntu+Condensed|Ubuntu+Mono);
+body {background: #f8f0b6;}
+a {text-decoration: none;}
+
+.hexbuttons {
+  display:flex;
+  flex-direction: column;
+  margin-top: 50px;
+  padding: 50px 0 0 70px;
+  width: 345px;
+ background-image: url(https://pngimg.com/uploads/bee/bee_PNG74682.png);
+  background-size: 228px;
+ justify-content: center;
+  
+}
+.hexr {
+  height: 100px;
+  margin-top: -15px;
+}
+.hexr:nth-child(even) {
+  margin-left: 53px;
+  width: 220px;
+}
+.hexagon {
+  background: #f5bc1e;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  float: left;
+  font-size: 36px;
+  height: 55px;
+  margin: 0 5px 0 0px;
+  position: relative;
+	width: 100px;
+  border: #f5bc1e;
+}
+.hexagon:before {
+	content: "";
+	position: absolute;
+	top: -25px;
+	left: 0;
+	width: 0;
+	height: 0;
+	border-left: 50px solid transparent;
+	border-right: 50px solid transparent;
+	border-bottom: 25px solid #f5bc1e;;
+}
+.hexagon:after {
+	content: "";
+	position: absolute;
+	bottom: -25px;
+	left: 0;
+	width: 0;
+	height: 0;
+	border-left: 50px solid transparent;
+	border-right: 50px solid transparent;
+	border-top: 25px solid #f5bc1e;;
+}
+
+
+.hexagon span { 
+  display: block; 
+  height: 100%;
+  padding-top: 8px;
+  text-align: center;
+  width: 100%;
+}
+.hexagon span::before {
+  content: attr(title);
+  background: #f5bc1e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 45px;
+  font: 14px 'Ubuntu Mono', monospace;
+  opacity: 0;
+  position: absolute;
+  top: -5px;
+  left: 0;
+  text-transform: uppercase;
+  transition: 0.1s all ease-in-out;
+  width: 100%;
+}
+.hexagon span::before {
+  opacity: 1;
+  top: 5px;
+  transition: 0.1s all ease-in-out;
+}
+
+.cookingitemCard{
+  display: flex;
+  flex-direction: column;
+  background-image: url(https://st3.depositphotos.com/28989096/34087/v/950/depositphotos_340879776-stock-illustration-kitchen-elements-cute-doodle-hand.jpg?forcejpeg=true);
+  background-size: contain;
+
+
+}
+
+
+.codingitemCard{
+  display: flex;
+  flex-direction: column;
+  background-image: url(https://thumbs.dreamstime.com/b/programming-yellow-line-tile-pattern-vector-illustration-outline-seamless-background-coding-resources-82682683.jpg);
+  background-size: contain;
+}
+
+
+.footballitemCard{
+  display: flex;
+  flex-direction: column;
+  background-image: url('https://image.shutterstock.com/image-illustration/illustration-pattern-soccer-balls-on-260nw-1954911397.jpg');
+  background-size:contain;
+
+}
+
+.footballHeader{
+  display: flex;
+  flex-direction: column;
+  background-color: #f8f0b6;
+
+}
+
+.cookingHeader{
+  display: flex;
+  flex-direction: column;
+  background-color: #f8f0b6;
+
+}
+
+.codingHeader{
+  display: flex;
+  flex-direction: column;
+  background-color: #f8f0b6;
+
+}
+
+
+.hexbuttonContainer{
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.hexagonbutton:hover{
+    cursor: pointer;
+ 
+}
+
+.hexagonbutton {
+  background: #f5bc1e;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  float: left;
+  font-size: 36px;
+  height: 55px;
+  margin: 0 5px 0 0px;
+  position: relative;
+	width: 100px;
+  border: #f5bc1e;
+}
+.hexagonbutton:before {
+	content: "";
+	position: absolute;
+	top: -25px;
+	left: 0;
+	width: 0;
+	height: 0;
+	border-left: 50px solid transparent;
+	border-right: 50px solid transparent;
+	border-bottom: 25px solid #f5bc1e;;
+}
+.hexagonbutton:after {
+	content: "";
+	position: absolute;
+	bottom: -25px;
+	left: 0;
+	width: 0;
+	height: 0;
+	border-left: 50px solid transparent;
+	border-right: 50px solid transparent;
+	border-top: 25px solid #f5bc1e;;
+}
+
+
+.hexagonbutton span { 
+  display: block; 
+  height: 100%;
+  padding-top: 8px;
+  text-align: center;
+  width: 100%;
+}
+.hexagonbutton span::before {
+  content: attr(title);
+  background: #f5bc1e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 45px;
+  font: 14px 'Ubuntu Mono', monospace;
+  opacity: 0;
+  position: absolute;
+  top: -5px;
+  left: 0;
+  text-transform: uppercase;
+  transition: 0.1s all ease-in-out;
+  width: 100%;
+}
+.hexagonbutton span::before {
+  opacity: 1;
+  top: 5px;
+  transition: 0.1s all ease-in-out;
+}
+
+@media (min-width:1025px) {
+  
+}
+

@@ -6,6 +6,7 @@ import Homepage from './components/homepage';
 import Weather from './components/weather';
 import NavBar from './components/navbar';
 import Article from './components/article';
+import Categories from './components/topic_articles';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       </header>
       <NavBar />
       <Routes>
+      <Route path="/categories" element = {<Categories />}/>
       <Route path="/:article_id" element = {<Article />}/>
       <Route path="/allArticles" element= {<AllArticles/>} /> 
       <Route path="/" element= {<Homepage />} /> 
@@ -25,5 +27,6 @@ function App() {
     </BrowserRouter>
   );
 }
+
 
 export default App;
