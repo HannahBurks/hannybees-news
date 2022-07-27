@@ -12,20 +12,22 @@ export default function Homepage(){
     return(
            <div>
                <h1>ARTICLE CATAGORIES</h1>
+               <div className='hexbuttonContainer'>
 <div className='hexbuttons'>
   <div className='hexr'>
-    <button className='hexagon' onClick={() => navigate('/categories', { state: {name:'coding'}})} ><span  title='Coding'><i className='fa fa-bolt'></i></span>
+    <button className='hexagonbutton' onClick={() => navigate('/categories', { state: {name:'coding'}})} ><span  title='Coding'><i className='fa fa-bolt'></i></span>
     </button>
-    <button className='hexagon' onClick={() => navigate('/categories', { state: {name:'cooking'}})}><span title='Cooking'><i className='fa fa-map'></i></span> </button>
+    <button className='hexagonbutton' onClick={() => navigate('/categories', { state: {name:'cooking'}})}><span title='Cooking'><i className='fa fa-map'></i></span> </button>
   </div>
   <div className='hexr'>
-    <button className='hexagon' onClick={() => navigate('/categories', { state: {name:'football'}})}><span  title='Football'><i className='fa fa-home'></i></span></button>
+    <button className='hexagonbutton' onClick={() => navigate('/categories', { state: {name:'football'}})}><span  title='Football'><i className='fa fa-home'></i></span></button>
     <div className='hexagon'><span><i className='fa fa-building'></i></span></div>
   </div>
   <div clasNames='hexr'>
     <div className='hexagon'><span ><i className='fa fa-star'></i></span></div>
     <div className='hexagon'><span ><i className='fa fa-pencil'></i></span></div>
   </div>
+</div>
 </div>
 </div>
     )
