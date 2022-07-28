@@ -9,7 +9,8 @@ export default function Article(){
 const [articleData, setArticleData] = useState([])
 const[commentData, setCommentData] = useState([])
 const [isLoading, setIsLoading] = useState(true)
-
+const [voteCount, setVoteCount] = useState(0)
+const[err, setErr]= useState('')
 
 function getAvatarUrl(user){
     const userRef = {
@@ -32,12 +33,16 @@ function getAvatarUrl(user){
         }).then((data) => {
                 setArticleData(() => {
                     return data.article
-                    
                 })
                 setIsLoading(false);
+            
             })
+            
         },[]);
 
+
+
+    
 
     useEffect(() => {
         fetch(`https://hannybees-news-app.herokuapp.com/api/articles${articleIdRoute}/comments`).then((response) => {
@@ -51,7 +56,52 @@ function getAvatarUrl(user){
             })
         },[]);
 
+       
+        const HandleUpVotes = () => {
+            setIsLoading(true);
+            setVoteCount(+1)
+            setErr(null)
+            fetch(`https://hannybees-news-app.herokuapp.com/api/articles${articleIdRoute}`, {
+  method: 'PATCH',
+  body: JSON.stringify({
+    votes: voteCount,
+  }),
+  headers: {
+    'Content-type': 'application/json; charset=UTF-8',
+  },
+}).then((response) => response.json())
+  .then((json) => setArticleData(json.article)).catch((err)=>{
+    setVoteCount(-1)
+    setErr('Something went wrong, please try again.')
+  });
   
+        }
+    
+                
+        const HandleDownVotes = () => {
+            setIsLoading(true);
+            setVoteCount(-1)
+            setErr(null)
+            fetch(`https://hannybees-news-app.herokuapp.com/api/articles${articleIdRoute}`, {
+  method: 'PATCH',
+  body: JSON.stringify({
+    votes: voteCount,
+  }),
+  headers: {
+    'Content-type': 'application/json; charset=UTF-8',
+  },
+}).then((response) => response.json())
+  .then((json) => setArticleData(json.article)).catch((err)=>{
+    setVoteCount(+1)
+    setErr('Something went wrong, please try again.')
+  })
+  
+        }  
+
+       
+
+
+
     return (
 <div className='Individual_article_container'>
     <div className='Article_container'>
@@ -59,19 +109,23 @@ function getAvatarUrl(user){
 <img className = 'singleArticle_avatar'src={getAvatarUrl(articleData.author)}/>
 <h3> Author: {articleData.author}</h3>
 <h2> Article Votes:{articleData.votes}</h2>
-<p>{articleData.body}</p>
+<p className ="error_message">{err}</p>
+<p className="article_body">{articleData.body}</p>
 </div>
+ <button className="likeButton" onClick={(HandleUpVotes)}>UP VOTE</button>
+<button className="dislikeButton" onClick={(HandleDownVotes)}>DOWN VOTE</button>
 <h2>Comment section</h2>
+<div className = "commentsContainer">
 {commentData.map((comment)=> {
     return (<div className = "comment_container">
         <img className = 'commenter_avatar'src={getAvatarUrl(comment.author)}/>
         <h5>user:{comment.author}</h5>
         <h6>Comment votes:{comment.votes}</h6>
     <p>{comment.body}</p>
-
     </div>
     )
 })}
+</div>
 </div>
 
     )
