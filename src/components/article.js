@@ -64,7 +64,7 @@ function getAvatarUrl(user){
             fetch(`https://hannybees-news-app.herokuapp.com/api/articles${articleIdRoute}`, {
   method: 'PATCH',
   body: JSON.stringify({
-    votes: voteCount,
+    inc_votes: voteCount,
   }),
   headers: {
     'Content-type': 'application/json; charset=UTF-8',
@@ -85,7 +85,7 @@ function getAvatarUrl(user){
             fetch(`https://hannybees-news-app.herokuapp.com/api/articles${articleIdRoute}`, {
   method: 'PATCH',
   body: JSON.stringify({
-    votes: voteCount,
+    inc_votes: voteCount,
   }),
   headers: {
     'Content-type': 'application/json; charset=UTF-8',
