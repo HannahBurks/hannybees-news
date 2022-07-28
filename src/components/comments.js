@@ -7,6 +7,9 @@ import '../App.css';
 export default function Comments ({articleIdRoute}){
 const[commentData, setCommentData] = useState([])
 const [isLoading, setIsLoading] = useState(true)
+const[newComment, setNewComment] = useState('')
+const [err, setErr] = useState(true)
+
 function getAvatarUrl(user){
 const userRef = {
     tickle122:'https://vignette.wikia.nocookie.net/mrmen/images/d/d6/Mr-Tickle-9a.png/revision/latest?cb=20180127221953',
@@ -34,24 +37,53 @@ const userRef = {
     },[]);
 
 
+    const handleSubmit = (event) => {
+        event.preventDefault()
+        setIsLoading(true);
+        setErr(null)
+        fetch(`https://hannybees-news-app.herokuapp.com/api/articles${articleIdRoute}/comments`, {
+    method: 'POST',
+    body: JSON.stringify({
+    username:'cooljmessy',
+    body: `${newComment}`,
+    }),
+    headers: {
+    'Content-type': 'application/json; charset=UTF-8',
+    },
+    }).then((response) => response.json())
+    .then((json) => setCommentData((currData)=>[json.comment,...currData])).catch((err)=>{
+    setNewComment('')
+    setErr('Something went wrong, please try again.')
+    })
+    
+    }  
+
+
+
 return(
 
 <div>
-    <h2>Comment section</h2>
+    <h2 className ="comment_section_header">Comment section</h2>
 <div className = "commentsContainer">
 {commentData.map((comment)=> {
     return (<div className = "comment_container">
         <img className = 'commenter_avatar'src={getAvatarUrl(comment.author)}/>
-        <h5>user:{comment.author}</h5>
-        <h6>Comment votes:{comment.votes}</h6>
-    <p>{comment.body}</p>
+        <h5 className = "commenter_username">{comment.author}</h5>
+        <h5 className = "commenter_votes">Comment votes:{comment.votes}</h5>
+    <p className="comment_body" >{comment.body}</p>
     </div>
     )
 })}
 </div>
+<form className="postComment" onSubmit={handleSubmit} >
+  <label className="commentBox">
+    <input type="text" className="comment" placeholder="Enter comment here..." minlength="10" value={newComment} onChange={(event) => setNewComment(event.target.value)}required/>
+  </label>
+  <input type="submit" value="Submit" />
+</form>
 </div>
 )
 
 
-}
 
+}
