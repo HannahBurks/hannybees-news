@@ -77,7 +77,7 @@ return(
 </div>
 <form className="postComment" onSubmit={handleSubmit} >
   <label className="commentBox">
-    <input type="text" className="comment" placeholder="Enter comment here..." value={newComment} onChange={(event) => setNewComment(event.target.value)}/>
+    <input type="text" className="comment" placeholder="Enter comment here..." value={newComment} onChange={(event) => setNewComment(event.target.value)}required/>
   </label>
   <input type="submit" value="Submit" />
 </form>
