@@ -63,7 +63,7 @@ const userRef = {
 return(
 
 <div>
-    <h2>Comment section</h2>
+    <h2 className ="comment_section_header">Comment section</h2>
 <div className = "commentsContainer">
 {commentData.map((comment)=> {
     return (<div className = "comment_container">

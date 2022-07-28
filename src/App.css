@@ -681,3 +681,7 @@ color:rgba(12, 8, 1, 0.736)
   font-size: large;
   font-weight: bold;
 }
+
+.comment_section_header{
+  font-family:'Raleway', sans-serif;
+}
