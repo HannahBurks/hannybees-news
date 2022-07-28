@@ -7,6 +7,9 @@ import '../App.css';
 export default function Comments ({articleIdRoute}){
 const[commentData, setCommentData] = useState([])
 const [isLoading, setIsLoading] = useState(true)
+const[newComment, setNewComment] = useState('')
+const [err, setErr] = useState(true)
+
 function getAvatarUrl(user){
 const userRef = {
     tickle122:'https://vignette.wikia.nocookie.net/mrmen/images/d/d6/Mr-Tickle-9a.png/revision/latest?cb=20180127221953',
@@ -34,6 +37,29 @@ const userRef = {
     },[]);
 
 
+    const handleSubmit = (event) => {
+        event.preventDefault()
+        setIsLoading(true);
+        setErr(null)
+        fetch(`https://hannybees-news-app.herokuapp.com/api/articles${articleIdRoute}/comments`, {
+    method: 'POST',
+    body: JSON.stringify({
+    username:'cooljmessy',
+    body: `${newComment}`,
+    }),
+    headers: {
+    'Content-type': 'application/json; charset=UTF-8',
+    },
+    }).then((response) => response.json())
+    .then((json) => setCommentData((currData)=>[json,...currData])).catch((err)=>{
+    setNewComment('')
+    setErr('Something went wrong, please try again.')
+    })
+    
+    }  
+
+
+
 return(
 
 <div>
@@ -49,9 +75,15 @@ return(
     )
 })}
 </div>
+<form className="postComment" onSubmit={handleSubmit} >
+  <label className="commentBox">
+    <input type="text" className="comment" placeholder="Enter comment here..." value={newComment} onChange={(event) => setNewComment(event.target.value)}/>
+  </label>
+  <input type="submit" value="Submit" />
+</form>
 </div>
 )
 
 
-}
 
+}
