@@ -1,6 +1,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Playfair+Display+SC&family=Vidaloka&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,500&display=swap');
 .App {
   text-align: center;
 }
@@ -130,21 +130,23 @@ background-color:  #fff4ac;;
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin: 5px;
+ 
 overflow-y: scroll;
-background-color: white;
+background-color:#190e03c3 ;
+padding-bottom: 5%;
+
 }
 
 
 
 .singleArticle_avatar{
   vertical-align: middle;
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
-  border-color: #000000;
+  border-color: #f2e8e8;
   border-style: solid;
-  box-shadow: 5px 5px 5px rgb(182, 170, 94);
+ 
   margin-top: 10px;
 }
 
@@ -538,7 +540,7 @@ height: 300px;
 margin-left:5%;
 flex-direction: column;
 text-align: justify;
-background-color: white;
+background-color: rgba(255, 255, 255, 0.438);
 padding:15px;
 align-self: center;
 
@@ -549,7 +551,7 @@ align-self: center;
  padding-left: 17px;
  padding-right: 10px;
 
-background-color: #fff898;
+background-color: #fff898b5;
 border-style: solid;
 border: #000000;
 
@@ -557,9 +559,17 @@ border: #000000;
 
 .article_body{
   text-align: center;
-  padding-left:10%;
-  padding-right:10%;
-  background-color: white
+  padding-top: 5%;
+  padding-bottom: 5%;
+  padding-left:7%;
+  padding-right:7%;
+  margin-left: 7%;
+  margin-right: 7%;
+  background-color: white;
+  font-size: large;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  
 }
 
 
@@ -584,4 +594,21 @@ margin-bottom:10%;
   padding-right: 5%;
   font-size: large;
   font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.article_title{
+  color: white;
+  font-weight: bold;
+  font-family:'Raleway', sans-serif;
+  font-size: xx-large;
+}
+
+.author_name{
+color: white;
+font-family:'Raleway', sans-serif;
+}
+
+.article_votes{
+  color: white;
+  font-family:'Raleway', sans-serif; 
 }
