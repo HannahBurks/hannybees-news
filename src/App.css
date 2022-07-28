@@ -34,9 +34,9 @@ font-size: x-large;
 margin-left: 15px;
 font-family: 'Playfair Display SC', serif;
 font-weight:bolder;
-background-color: #ffffff;
+background-color: #ffffffa9;
 margin-bottom:80px; 
-box-shadow: 5px 5px 5px rgb(182, 170, 94);
+box-shadow: 5px 5px 5px rgba(182, 170, 94, 0.829);
 
 }
 
@@ -106,7 +106,9 @@ box-shadow: 5px 5px 5px rgb(182, 170, 94);
 .itemCard{
   display: flex;
   flex-direction: column;
- background-image: url('https://static.vecteezy.com/system/resources/thumbnails/005/018/822/small/hexagon-mosaic-background-abstract-orange-honeycomb-free-vector.jpg')
+ background-image: url('https://static.vecteezy.com/system/resources/thumbnails/005/018/822/small/hexagon-mosaic-background-abstract-orange-honeycomb-free-vector.jpg');
+
+ 
 }
 
 .Partone_itemCard{
@@ -166,7 +168,7 @@ padding-bottom: 5%;
 *{ box-sizing: border-box; }
 html,body{ height: 100%; width: 100%; }
 @import url(https://fonts.googleapis.com/css?family=Ubuntu:400,700,300|Ubuntu+Condensed|Ubuntu+Mono);
-body {background: #f8f0b6;}
+body {background: #f5bc1ec5;}
 a {text-decoration: none;}
 
 .hexbuttons {
@@ -189,7 +191,7 @@ a {text-decoration: none;}
   width: 220px;
 }
 .hexagon {
-  background: #f5bc1e;
+  background: #f5bc1ec5;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -199,7 +201,7 @@ a {text-decoration: none;}
   margin: 0 5px 0 0px;
   position: relative;
 	width: 100px;
-  border: #f5bc1e;
+  border: #f5bc1ec5;
 }
 .hexagon:before {
 	content: "";
@@ -210,7 +212,7 @@ a {text-decoration: none;}
 	height: 0;
 	border-left: 50px solid transparent;
 	border-right: 50px solid transparent;
-	border-bottom: 25px solid #f5bc1e;;
+	border-bottom: 25px solid #f5bc1ec5;
 }
 .hexagon:after {
 	content: "";
@@ -221,7 +223,7 @@ a {text-decoration: none;}
 	height: 0;
 	border-left: 50px solid transparent;
 	border-right: 50px solid transparent;
-	border-top: 25px solid #f5bc1e;;
+	border-top: 25px solid #f5bc1ec5;
 }
 
 
@@ -234,7 +236,7 @@ a {text-decoration: none;}
 }
 .hexagon span::before {
   content: attr(title);
-  background: #f5bc1e;
+  background: #f5bc1ec5;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -310,21 +312,22 @@ a {text-decoration: none;}
 
 .hexagonbutton:hover{
     cursor: pointer;
+    font-size: large;
  
 }
 
 .hexagonbutton {
-  background: #f5bc1e;
+  background: #f5bc1ec5;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   float: left;
-  font-size: 36px;
+  font-size: large;
   height: 55px;
   margin: 0 5px 0 0px;
   position: relative;
 	width: 100px;
-  border: #f5bc1e;
+  border: #f5bc1ec5;
 }
 .hexagonbutton:before {
 	content: "";
@@ -335,7 +338,8 @@ a {text-decoration: none;}
 	height: 0;
 	border-left: 50px solid transparent;
 	border-right: 50px solid transparent;
-	border-bottom: 25px solid #f5bc1e;;
+	border-bottom: 25px solid #f5bc1ec5;
+  font-size: large;
 }
 .hexagonbutton:after {
 	content: "";
@@ -346,7 +350,8 @@ a {text-decoration: none;}
 	height: 0;
 	border-left: 50px solid transparent;
 	border-right: 50px solid transparent;
-	border-top: 25px solid #f5bc1e;;
+	border-top: 25px solid #f5bc1ec5;
+  font-size: large;
 }
 
 
@@ -356,10 +361,11 @@ a {text-decoration: none;}
   padding-top: 8px;
   text-align: center;
   width: 100%;
+  font-size: large;
 }
 .hexagonbutton span::before {
   content: attr(title);
-  background: #f5bc1e;
+  background: #f5bc1ec5;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -372,11 +378,13 @@ a {text-decoration: none;}
   text-transform: uppercase;
   transition: 0.1s all ease-in-out;
   width: 100%;
+  font-size: large;
 }
 .hexagonbutton span::before {
   opacity: 1;
   top: 5px;
   transition: 0.1s all ease-in-out;
+  font-size: large;
 }
 
 .error_message{
@@ -581,7 +589,7 @@ background-size: 1000px;
 .aboutUsSection{
   display: flex;
   flex-direction: column;
-  background-color: rgb(194, 160, 96);
+  background-color: rgba(194, 160, 96, 0.832);
   margin-top: 80px;
   width:80%;
 margin-left:10%;
