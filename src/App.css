@@ -69,8 +69,9 @@ box-shadow: 5px 5px 5px rgba(182, 170, 94, 0.829);
 .navBar {
   display:flex;
   flex-direction: row;
-  background-color: #ffe500;
-  height: 50px;
+  background: rgb(255,228,32);
+background: linear-gradient(90deg, rgba(255,228,32,1) 0%, rgba(255,189,26,1) 35%, rgba(255,228,32,1) 100%);
+  height: 70px;
   
   
 }
@@ -78,17 +79,18 @@ box-shadow: 5px 5px 5px rgba(182, 170, 94, 0.829);
 .bar {
   display:flex;
   flex-direction: column;
-  border-right: 1px solid #000000;
-  border-bottom: 1px solid #000000;
-  border-top: 1px solid #000000;
+  border-right: 1px solid #fdfdfd00;
+  border-bottom: 1px solid #fdfdfd00;
+  border-top: 1px solid #fdfdfd00;
   width: 50.33%;
-  margin: 0px;
-  padding-top: 15px;
+  margin-left: 1px;
+  padding-top: 25px;
   text-align: center;
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  font-size: small;
-  font-weight: bold;
- 
+  font-size: medium;
+  font-weight: large;
+  color: black;
+ border-radius: 20px;
 
 }
 
@@ -157,7 +159,7 @@ padding-bottom: 5%;
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  border-color: #000000;
+  border-color: #ffffff;
   border-style: solid;
   box-shadow: 5px 5px 5px rgb(182, 170, 94);
   margin-top: 10px;
@@ -168,7 +170,7 @@ padding-bottom: 5%;
 *{ box-sizing: border-box; }
 html,body{ height: 100%; width: 100%; }
 @import url(https://fonts.googleapis.com/css?family=Ubuntu:400,700,300|Ubuntu+Condensed|Ubuntu+Mono);
-body {background: #f5bc1ec5;}
+body {background: #ffc800ea;}
 a {text-decoration: none;}
 
 .hexbuttons {
@@ -191,7 +193,7 @@ a {text-decoration: none;}
   width: 220px;
 }
 .hexagon {
-  background: #f5bc1ec5;
+  background:#ffc800ea;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -201,7 +203,7 @@ a {text-decoration: none;}
   margin: 0 5px 0 0px;
   position: relative;
 	width: 100px;
-  border: #f5bc1ec5;
+  border:#ffc800ea;
 }
 .hexagon:before {
 	content: "";
@@ -212,7 +214,7 @@ a {text-decoration: none;}
 	height: 0;
 	border-left: 50px solid transparent;
 	border-right: 50px solid transparent;
-	border-bottom: 25px solid #f5bc1ec5;
+	border-bottom: 25px solid #ffc800ea;
 }
 .hexagon:after {
 	content: "";
@@ -223,7 +225,7 @@ a {text-decoration: none;}
 	height: 0;
 	border-left: 50px solid transparent;
 	border-right: 50px solid transparent;
-	border-top: 25px solid #f5bc1ec5;
+	border-top: 25px solid #ffc800ea;
 }
 
 
@@ -236,7 +238,7 @@ a {text-decoration: none;}
 }
 .hexagon span::before {
   content: attr(title);
-  background: #f5bc1ec5;
+  background: #ffc800ea;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -317,7 +319,7 @@ a {text-decoration: none;}
 }
 
 .hexagonbutton {
-  background: #f5bc1ec5;
+  background:#ffc800ea;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -327,7 +329,7 @@ a {text-decoration: none;}
   margin: 0 5px 0 0px;
   position: relative;
 	width: 100px;
-  border: #f5bc1ec5;
+  border: #ffc800ea;
 }
 .hexagonbutton:before {
 	content: "";
@@ -338,7 +340,7 @@ a {text-decoration: none;}
 	height: 0;
 	border-left: 50px solid transparent;
 	border-right: 50px solid transparent;
-	border-bottom: 25px solid #f5bc1ec5;
+	border-bottom: 25px solid  #ffc800ea;
   font-size: large;
 }
 .hexagonbutton:after {
@@ -350,7 +352,7 @@ a {text-decoration: none;}
 	height: 0;
 	border-left: 50px solid transparent;
 	border-right: 50px solid transparent;
-	border-top: 25px solid #f5bc1ec5;
+	border-top: 25px solid #ffc800ea;
   font-size: large;
 }
 
@@ -365,7 +367,7 @@ a {text-decoration: none;}
 }
 .hexagonbutton span::before {
   content: attr(title);
-  background: #f5bc1ec5;
+  background: #ffc800ea;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -658,4 +660,24 @@ margin: 20px 20px;
 cursor: pointer;
 border-radius: 10px;
 
+}
+
+.commenter_username{
+  font-size: large;
+color: rgb(0, 0, 0);
+font-weight: normal;
+
+}
+
+.commenter_votes{
+  font-size: medium;
+  font-weight:lighter;
+font-style: italic;
+color:rgba(12, 8, 1, 0.736)
+
+}
+
+.comment_body{
+  font-size: large;
+  font-weight: bold;
 }

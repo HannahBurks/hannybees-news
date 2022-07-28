@@ -51,7 +51,7 @@ const userRef = {
     'Content-type': 'application/json; charset=UTF-8',
     },
     }).then((response) => response.json())
-    .then((json) => setCommentData((currData)=>[json,...currData])).catch((err)=>{
+    .then((json) => setCommentData((currData)=>[json.comment,...currData])).catch((err)=>{
     setNewComment('')
     setErr('Something went wrong, please try again.')
     })
@@ -68,9 +68,9 @@ return(
 {commentData.map((comment)=> {
     return (<div className = "comment_container">
         <img className = 'commenter_avatar'src={getAvatarUrl(comment.author)}/>
-        <h5>user:{comment.author}</h5>
-        <h6>Comment votes:{comment.votes}</h6>
-    <p>{comment.body}</p>
+        <h5 className = "commenter_username">{comment.author}</h5>
+        <h5 className = "commenter_votes">Comment votes:{comment.votes}</h5>
+    <p className="comment_body" >{comment.body}</p>
     </div>
     )
 })}
