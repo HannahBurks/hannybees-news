@@ -49,7 +49,6 @@ function getAvatarUrl(user){
 <h2 className ="article_title">{articleData.title}</h2>
 <img className = 'singleArticle_avatar'src={getAvatarUrl(articleData.author)}/>
 <h3 className = "author_name"> Author: {articleData.author}</h3>
-<h2 className= "article_votes"> Article Votes: {voteCount}</h2>
 <p className ="error_message">{err}</p>
 <Votes articleData={articleData} setArticleData={setArticleData} articleIdRoute={articleIdRoute}/>
 <p className="article_body">{articleData.body}</p>
