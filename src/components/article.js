@@ -1,15 +1,16 @@
 import { useEffect } from "react";
 import { useState} from "react";
 import '../App.css';
-
-
+import Comments from "./comments";
+import Votes from "./votes";
 
 export default function Article(){
     const articleIdRoute = window.location.pathname
 const [articleData, setArticleData] = useState([])
 const[commentData, setCommentData] = useState([])
 const [isLoading, setIsLoading] = useState(true)
-
+const [voteCount, setVoteCount] = useState(0)
+const[err, setErr]= useState('')
 
 function getAvatarUrl(user){
     const userRef = {
@@ -32,46 +33,27 @@ function getAvatarUrl(user){
         }).then((data) => {
                 setArticleData(() => {
                     return data.article
-                    
                 })
                 setIsLoading(false);
+            
             })
+            
         },[]);
 
 
-    useEffect(() => {
-        fetch(`https://hannybees-news-app.herokuapp.com/api/articles${articleIdRoute}/comments`).then((response) => {
-            return response.json();
-        }).then((data) => {
-                setCommentData(() => {
-                   return data
-                    
-                })
-                setIsLoading(false);
-            })
-        },[]);
 
-  
     return (
 <div className='Individual_article_container'>
     <div className='Article_container'>
-<h2>{articleData.title}</h2>
-<img className = 'singleArticle_avatar'src={getAvatarUrl(articleData.author)}/>
-<h3> Author: {articleData.author}</h3>
-<h2> Article Votes:{articleData.votes}</h2>
-<p>{articleData.body}</p>
-</div>
-<h2>Comment section</h2>
-{commentData.map((comment)=> {
-    return (<div className = "comment_container">
-        <img className = 'commenter_avatar'src={getAvatarUrl(comment.author)}/>
-        <h5>user:{comment.author}</h5>
-        <h6>Comment votes:{comment.votes}</h6>
-    <p>{comment.body}</p>
 
-    </div>
-    )
-})}
+<h2 className ="article_title">{articleData.title}</h2>
+<img className = 'singleArticle_avatar'src={getAvatarUrl(articleData.author)}/>
+<h3 className = "author_name"> Author: {articleData.author}</h3>
+<p className ="error_message">{err}</p>
+<Votes articleData={articleData} setArticleData={setArticleData} articleIdRoute={articleIdRoute}/>
+<p className="article_body">{articleData.body}</p>
+</div>
+<Comments articleIdRoute={articleIdRoute} />
 </div>
 
     )

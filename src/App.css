@@ -1,6 +1,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Playfair+Display+SC&family=Vidaloka&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,500&display=swap');
 .App {
   text-align: center;
 }
@@ -34,9 +34,9 @@ font-size: x-large;
 margin-left: 15px;
 font-family: 'Playfair Display SC', serif;
 font-weight:bolder;
-background-color: #ffffff;
+background-color: #ffffffa9;
 margin-bottom:80px; 
-box-shadow: 5px 5px 5px rgb(182, 170, 94);
+box-shadow: 5px 5px 5px rgba(182, 170, 94, 0.829);
 
 }
 
@@ -106,7 +106,9 @@ box-shadow: 5px 5px 5px rgb(182, 170, 94);
 .itemCard{
   display: flex;
   flex-direction: column;
- background-image: url('https://static.vecteezy.com/system/resources/thumbnails/005/018/822/small/hexagon-mosaic-background-abstract-orange-honeycomb-free-vector.jpg')
+ background-image: url('https://static.vecteezy.com/system/resources/thumbnails/005/018/822/small/hexagon-mosaic-background-abstract-orange-honeycomb-free-vector.jpg');
+
+ 
 }
 
 .Partone_itemCard{
@@ -130,34 +132,30 @@ background-color:  #fff4ac;;
   display: flex;
   align-items: center;
   flex-direction: column;
-  border-style: solid;
-  margin: 30px;
+ 
+overflow-y: scroll;
+background-color:#190e03c3 ;
+padding-bottom: 5%;
 
 }
 
-.comment_container{
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  border-style: solid;
-  margin: 30px;
-}
+
 
 .singleArticle_avatar{
   vertical-align: middle;
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
-  border-color: #000000;
+  border-color: #f2e8e8;
   border-style: solid;
-  box-shadow: 5px 5px 5px rgb(182, 170, 94);
+ 
   margin-top: 10px;
 }
 
 .commenter_avatar{
   vertical-align: middle;
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   border-color: #000000;
   border-style: solid;
@@ -170,7 +168,7 @@ background-color:  #fff4ac;;
 *{ box-sizing: border-box; }
 html,body{ height: 100%; width: 100%; }
 @import url(https://fonts.googleapis.com/css?family=Ubuntu:400,700,300|Ubuntu+Condensed|Ubuntu+Mono);
-body {background: #f8f0b6;}
+body {background: #f5bc1ec5;}
 a {text-decoration: none;}
 
 .hexbuttons {
@@ -193,7 +191,7 @@ a {text-decoration: none;}
   width: 220px;
 }
 .hexagon {
-  background: #f5bc1e;
+  background: #f5bc1ec5;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -203,7 +201,7 @@ a {text-decoration: none;}
   margin: 0 5px 0 0px;
   position: relative;
 	width: 100px;
-  border: #f5bc1e;
+  border: #f5bc1ec5;
 }
 .hexagon:before {
 	content: "";
@@ -214,7 +212,7 @@ a {text-decoration: none;}
 	height: 0;
 	border-left: 50px solid transparent;
 	border-right: 50px solid transparent;
-	border-bottom: 25px solid #f5bc1e;;
+	border-bottom: 25px solid #f5bc1ec5;
 }
 .hexagon:after {
 	content: "";
@@ -225,7 +223,7 @@ a {text-decoration: none;}
 	height: 0;
 	border-left: 50px solid transparent;
 	border-right: 50px solid transparent;
-	border-top: 25px solid #f5bc1e;;
+	border-top: 25px solid #f5bc1ec5;
 }
 
 
@@ -238,7 +236,7 @@ a {text-decoration: none;}
 }
 .hexagon span::before {
   content: attr(title);
-  background: #f5bc1e;
+  background: #f5bc1ec5;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -314,21 +312,22 @@ a {text-decoration: none;}
 
 .hexagonbutton:hover{
     cursor: pointer;
+    font-size: large;
  
 }
 
 .hexagonbutton {
-  background: #f5bc1e;
+  background: #f5bc1ec5;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   float: left;
-  font-size: 36px;
+  font-size: large;
   height: 55px;
   margin: 0 5px 0 0px;
   position: relative;
 	width: 100px;
-  border: #f5bc1e;
+  border: #f5bc1ec5;
 }
 .hexagonbutton:before {
 	content: "";
@@ -339,7 +338,8 @@ a {text-decoration: none;}
 	height: 0;
 	border-left: 50px solid transparent;
 	border-right: 50px solid transparent;
-	border-bottom: 25px solid #f5bc1e;;
+	border-bottom: 25px solid #f5bc1ec5;
+  font-size: large;
 }
 .hexagonbutton:after {
 	content: "";
@@ -350,7 +350,8 @@ a {text-decoration: none;}
 	height: 0;
 	border-left: 50px solid transparent;
 	border-right: 50px solid transparent;
-	border-top: 25px solid #f5bc1e;;
+	border-top: 25px solid #f5bc1ec5;
+  font-size: large;
 }
 
 
@@ -360,10 +361,11 @@ a {text-decoration: none;}
   padding-top: 8px;
   text-align: center;
   width: 100%;
+  font-size: large;
 }
 .hexagonbutton span::before {
   content: attr(title);
-  background: #f5bc1e;
+  background: #f5bc1ec5;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -376,14 +378,245 @@ a {text-decoration: none;}
   text-transform: uppercase;
   transition: 0.1s all ease-in-out;
   width: 100%;
+  font-size: large;
 }
 .hexagonbutton span::before {
   opacity: 1;
   top: 5px;
   transition: 0.1s all ease-in-out;
+  font-size: large;
+}
+
+.error_message{
+  color: red;
+  font-weight: bold;
+
 }
 
 @media (min-width:1025px) {
   
 }
 
+
+
+
+.likeButton {
+  padding: 0.6em 2em;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin: 10px;
+}
+
+.likeButton:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #0c9117,
+    #1ac144,
+    #63dd21,
+    #4bff04,
+    #10ff74,
+    #00ff0d,
+    #35b10b,
+    #15600d,
+    #00a318
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-button-85 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+@keyframes glowing-button-85 {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.likeButton:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #222;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+
+
+.dislikeButton {
+  padding: 0.6em 2em;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin: 10px;
+}
+
+.dislikeButton:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #f90b0b,
+    #d44e00,
+    #ff2f00,
+    #ff1500,
+    #7e1100,
+    #ff0000,
+    #780606
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-button-85 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+@keyframes glowing-button-85 {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.dislikeButton:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #222;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+.commentsContainer{
+  display: flex;
+overflow-y: scroll;
+overflow-x: hidden;
+margin: 10px;
+width: 90%;
+height: 300px;
+margin-left:5%;
+flex-direction: column;
+text-align: justify;
+background-color: rgba(255, 255, 255, 0.438);
+padding:15px;
+align-self: center;
+
+}
+
+.comment_container{
+ margin: 5px;
+ padding-left: 17px;
+ padding-right: 10px;
+
+background-color: #fff898b5;
+border-style: solid;
+border: #000000;
+
+}
+
+.article_body{
+  text-align: center;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  padding-left:7%;
+  padding-right:7%;
+  margin-left: 7%;
+  margin-right: 7%;
+  background-color: white;
+  font-size: large;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  
+}
+
+
+body{
+background-image: url(https://static.vecteezy.com/system/resources/thumbnails/000/532/223/small/7-01.jpg);
+background-size: 1000px;
+}
+
+.aboutUsSection{
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(194, 160, 96, 0.832);
+  margin-top: 80px;
+  width:80%;
+margin-left:10%;
+padding-bottom: 5%;
+margin-bottom:10%;
+}
+
+.introduction{
+  padding-left: 5%;
+  padding-right: 5%;
+  font-size: large;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.article_title{
+  color: white;
+  font-weight: bold;
+  font-family:'Raleway', sans-serif;
+  font-size: xx-large;
+}
+
+.author_name{
+color: white;
+font-family:'Raleway', sans-serif;
+}
+
+.article_votes{
+  color: white;
+  font-family:'Raleway', sans-serif; 
+}
