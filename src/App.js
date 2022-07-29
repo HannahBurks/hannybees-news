@@ -24,7 +24,7 @@ function App() {
       <Route path="/:article_id" element = {<Article />}/>
       <Route path="/allArticles" element= {<AllArticles/>} /> 
       <Route path="/" element= {<Homepage />} /> 
-      <Route path="/weather" element= {<Weather/>} /> 
+      <Route path="/Weather" element= {<Weather/>} /> 
       </Routes>
     </div>
     </BrowserRouter>
