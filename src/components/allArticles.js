@@ -101,9 +101,7 @@ if(event.target.value === "created_atO"){
               <p className="allArticles_body">{article.body} </p>
               <button
                 className={`${article.article_id}-button`}
-                onClick={() => navigate(`/${article.article_id}`)}
-              >
-                {" "}
+                onClick={() => navigate(`/${article.article_id}`)}>
                 Click to see full article
               </button>
             </div>
