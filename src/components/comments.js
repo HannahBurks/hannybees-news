@@ -9,7 +9,7 @@ const[commentData, setCommentData] = useState([])
 const [isLoading, setIsLoading] = useState(true)
 const[newComment, setNewComment] = useState('')
 const [err, setErr] = useState(true)
-const [commentId, setCommentId] = useState()
+
 
 function getAvatarUrl(user){
 const userRef = {
@@ -58,31 +58,24 @@ const userRef = {
     })
     
     }  
-    
     const handleDelete = (event) => {
-        event.preventDefault()
-      setCommentId(event.target.className)
-      setIsLoading(true);
-        setErr(null)
-        fetch(`https://hannybees-news-app.herokuapp.com/api/comments/${commentId}`, {
-                method: 'DELETE',
-    }).then(() =>{
-        fetch(`https://hannybees-news-app.herokuapp.com/api/articles${articleIdRoute}/comments`).then((response) => {
-        return response.json();
-    }).then((data) => {
-        setCommentData(() => {
-            return data
-             
-         })
-         setIsLoading(false);
-     })
- },[]);
-                
-            
-       
-        
-    }
+    event.preventDefault()
+    setIsLoading(true);
+    setErr(null)
+    fetch(`https://hannybees-news-app.herokuapp.com/api/comments/${event.target.className}`, {
+            method: 'DELETE',
+}).then(() =>{
+    fetch(`https://hannybees-news-app.herokuapp.com/api/articles${articleIdRoute}/comments`).then((response) => {
+    return response.json();
+}).then((data) => {
+    setCommentData(() => {
+        return data
 
+     })
+     setIsLoading(false);
+ })
+},[commentData]);
+    }
 
 return(
 
