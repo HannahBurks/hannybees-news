@@ -1,4 +1,4 @@
-import { BrowserRouter, Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Router, Route, Routes, useParams } from 'react-router-dom';
 import './App.css';
 import Header from './components/header';
 import AllArticles from './components/allArticles';
@@ -7,6 +7,7 @@ import Weather from './components/weather';
 import NavBar from './components/navbar';
 import Article from './components/article';
 import Categories from './components/topic_articles';
+import { useSearchParams } from "react-router-dom";
 
 function App() {
   return (

@@ -685,3 +685,17 @@ color:rgba(12, 8, 1, 0.736)
 .comment_section_header{
   font-family:'Raleway', sans-serif;
 }
+
+.sortby_container{
+
+background-color: rgba(255, 254, 254, 0.808);
+flex-direction: row;
+text-align: center;
+justify-content: flex-end;
+margin-left: 40%;
+margin-right: 40%;
+ margin-top: 5%;
+ font-size: large;
+
+}
+
