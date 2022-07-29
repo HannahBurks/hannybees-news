@@ -1,10 +1,11 @@
 import { useEffect } from "react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import '../App.css';
 
 export default function ActiveUser(){
     const [userDetails, setUserDetails] = useState('')
-    
+    const navigate = useNavigate()
     
 
     useEffect(() => {
@@ -26,6 +27,6 @@ export default function ActiveUser(){
     return (
         <div className='user_card--active'>
    <img className= 'user_avatar--active' src={userDetails.avatar_url} alt={`${userDetails.name} avatar`} />
-   <h6>{userDetails.name}</h6>
+   <h3>{userDetails.name}</h3>
         </div>
     )}

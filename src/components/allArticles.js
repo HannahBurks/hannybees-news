@@ -11,7 +11,7 @@ export default function AllArticles() {
   const [isLoading, setIsLoading] = useState(true);
   const [userInfo, setUserInfo] = useState({});
   const [searchParams, setSearchParams] = useSearchParams();
-  const [order, setOrder] = useSearchParams({});
+  const [error, setError] = useState(null)
   const navigate = useNavigate();
 
 
@@ -35,7 +35,7 @@ export default function AllArticles() {
   }
 
   useEffect(() => {
-   
+   setIsLoading(true)
     fetch(
       `https://hannybees-news-app.herokuapp.com/api/articles?${searchParams}`
     )
@@ -47,22 +47,30 @@ export default function AllArticles() {
           return data.articles;
         });
         setIsLoading(false);
-      });
+      }).catch((err) => {
+        console.log(err)
+        setError({err})
+      })
   }, [searchParams]);
 
   useEffect(() => {
+    setIsLoading(true)
     fetch("https://hannybees-news-app.herokuapp.com/api/users")
       .then((response) => {
         return response.json();
       })
       .then((data) => {
         setAuthorData(data.users);
-      });
-    setIsLoading(false);
+        setIsLoading(false)
+      })
+      .catch((err) => {
+        setError({err})
+      })
   }, []);
 
   const HandleSortBy = (event) => {
     event.preventDefault();
+    setIsLoading(true)
 if(event.target.value === "created_atO"){
   setSearchParams({sort_by: "created_at", order: "ASC"})
 } else if (event.target.value === "votesL"){
@@ -72,10 +80,13 @@ if(event.target.value === "created_atO"){
 }
   };
 
-
+  if (error) {
+    return <h2> message={error} </h2>
+  }
 
   return (
     <div>
+      {isLoading? <h2 className = "loadingMessage">Loading...</h2> : null}
       <div className="itemCard">
       <div className="sortby_container">
       <label for="sortBy"> Sort by:</label>
@@ -101,9 +112,7 @@ if(event.target.value === "created_atO"){
               <p className="allArticles_body">{article.body} </p>
               <button
                 className={`${article.article_id}-button`}
-                onClick={() => navigate(`/${article.article_id}`)}
-              >
-                {" "}
+                onClick={() => navigate(`/${article.article_id}`)}>
                 Click to see full article
               </button>
             </div>

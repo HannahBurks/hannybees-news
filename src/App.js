@@ -8,6 +8,7 @@ import NavBar from './components/navbar';
 import Article from './components/article';
 import Categories from './components/topic_articles';
 import { useSearchParams } from "react-router-dom";
+import ErrorPage from './components/errorPage';
 
 function App() {
   return (
@@ -18,11 +19,12 @@ function App() {
       </header>
       <NavBar />
       <Routes>
+      <Route path="*" element={<ErrorPage/>} />
       <Route path="/categories" element = {<Categories />}/>
       <Route path="/:article_id" element = {<Article />}/>
       <Route path="/allArticles" element= {<AllArticles/>} /> 
       <Route path="/" element= {<Homepage />} /> 
-      <Route path="/weather" element= {<Weather/>} /> 
+      <Route path="/Weather" element= {<Weather/>} /> 
       </Routes>
     </div>
     </BrowserRouter>

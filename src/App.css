@@ -699,3 +699,11 @@ margin-right: 40%;
 
 }
 
+.loadingMessage{
+color: #0d0505;
+background-color: #fff9f9;
+}
+
+.weatherwidget-io{
+margin-top: 3%;
+}

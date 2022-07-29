@@ -10,6 +10,7 @@ const [isLoading, setIsLoading] = useState(true)
 const[newComment, setNewComment] = useState('')
 const [err, setErr] = useState(true)
 
+
 function getAvatarUrl(user){
 const userRef = {
     tickle122:'https://vignette.wikia.nocookie.net/mrmen/images/d/d6/Mr-Tickle-9a.png/revision/latest?cb=20180127221953',
@@ -57,8 +58,24 @@ const userRef = {
     })
     
     }  
+    const handleDelete = (event) => {
+    event.preventDefault()
+    setIsLoading(true);
+    setErr(null)
+    fetch(`https://hannybees-news-app.herokuapp.com/api/comments/${event.target.className}`, {
+            method: 'DELETE',
+}).then(() =>{
+    fetch(`https://hannybees-news-app.herokuapp.com/api/articles${articleIdRoute}/comments`).then((response) => {
+    return response.json();
+}).then((data) => {
+    setCommentData(() => {
+        return data
 
-
+     })
+     setIsLoading(false);
+ })
+},[commentData]);
+    }
 
 return(
 
@@ -69,6 +86,7 @@ return(
     return (<div className = "comment_container">
         <img className = 'commenter_avatar'src={getAvatarUrl(comment.author)}/>
         <h5 className = "commenter_username">{comment.author}</h5>
+        {comment.author === "cooljmessy"? <button className ={`${comment.comment_id}`} onClick={handleDelete}>Delete Comment</button>: null}
         <h5 className = "commenter_votes">Comment votes:{comment.votes}</h5>
     <p className="comment_body" >{comment.body}</p>
     </div>
