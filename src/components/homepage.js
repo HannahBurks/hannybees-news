@@ -11,7 +11,7 @@ export default function Homepage(){
 
     return(
            <div>
-               <h1 className="homepage-title">ARTICLE CATAGORIES</h1>
+               <h1 className="homepage-title">  ARTICLE CATAGORIES </h1>
                <div className='hexbuttonContainer'>
 <div className='hexbuttons'>
   <div className='hexr'>

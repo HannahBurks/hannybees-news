@@ -11,7 +11,7 @@ export default function Weather(){
 
     return(
     <div>
-    <h1 className ="weatherHeader">Weather and Travel</h1>
+    <h1 className ="weatherHeader"> &#127780; Weather and Travel &#127780;</h1>
     <div className ="weatherWidget">
         <div></div>
     <WeatherWidget

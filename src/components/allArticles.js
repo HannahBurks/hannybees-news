@@ -76,7 +76,7 @@ if(event.target.value === "created_atO"){
 
   return (
     <div>
-      <h1 className ="allArticlesPageTitle"> All Articles </h1>
+      <h1 className ="allArticlesPageTitle"> All Articles &#128029; </h1>
       <div className="itemCard">
       <div className="sortby_container">
       <label for="sortBy"> Sort by: </label>
