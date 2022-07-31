@@ -3,6 +3,7 @@ import { useEffect } from "react";
     import { useState } from "react";
     import '../App.css';
     import Article from './article'
+import LoadingSpinner from "./LoadSpinner";
     
 
     export default function Categories(){
@@ -34,6 +35,7 @@ import { useEffect } from "react";
    
 
         useEffect(() => {
+          setIsLoading(true)
         fetch(`https://hannybees-news-app.herokuapp.com/api/articles?topic=${categoryName}`).then((response) => {
             return response.json();
           })
@@ -49,9 +51,9 @@ import { useEffect } from "react";
     const capitalizedCategory = categoryName[0].toUpperCase() + categoryName.substring(1)
     
     
-    return (
+    return (<div>
+      {isLoading && <LoadingSpinner/>}
              <div className ={`${categoryName}itemCard`}>
-              
             <h1 className={`${categoryName}Header`}> {capitalizedCategory} Articles</h1>
           
              {articleData.map((article) => {
@@ -61,12 +63,12 @@ import { useEffect } from "react";
                     <h6 className = "allArticles_author" >{article.author} </h6>
                     <h2 className="allArticles_title">{article.title}</h2>
                     <p className = "allArticles_body">{article.body} </p>
-                    <button className ={`${article.article_id}-button`} onClick={() => navigate(`/${article.article_id}`)} > Click to see full article</button>
+                    <button className ="articleButton" onClick={() => navigate(`/${article.article_id}`)} > Click to see full article</button>
                 </div>
                 )
                   })}
                   
-    
+                  </div>
     </div>
     )
     }

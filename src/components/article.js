@@ -3,6 +3,7 @@ import { useState} from "react";
 import '../App.css';
 import Comments from "./comments";
 import Votes from "./votes";
+import LoadingSpinner from "./LoadSpinner.js";
 
 export default function Article(){
     const articleIdRoute = window.location.pathname
@@ -38,11 +39,13 @@ function getAvatarUrl(user){
             
             })
             
-        },[]);
+        },[isLoading]);
 
 
 
     return (
+        <div>
+        {isLoading && <LoadingSpinner/> }
 <div className='Individual_article_container'>
     <div className='Article_container'>
 
@@ -54,6 +57,7 @@ function getAvatarUrl(user){
 <p className="article_body">{articleData.body}</p>
 </div>
 <Comments articleIdRoute={articleIdRoute} />
+</div>
 </div>
 
     )

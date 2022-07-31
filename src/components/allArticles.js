@@ -2,8 +2,12 @@ import { useEffect } from "react";
 import { Routes, Route, useNavigate, useParams } from "react-router-dom";
 import { useState } from "react";
 import "../App.css";
+import "../spinner.css";
 import Article from "./article";
 import { useSearchParams } from "react-router-dom";
+import LoadingSpinner from "./LoadSpinner";
+
+
 
 export default function AllArticles() {
   const [articleData, setArticleData] = useState([]);
@@ -35,7 +39,7 @@ export default function AllArticles() {
   }
 
   useEffect(() => {
-   
+   setIsLoading(true)
     fetch(
       `https://hannybees-news-app.herokuapp.com/api/articles?${searchParams}`
     )
@@ -48,9 +52,10 @@ export default function AllArticles() {
         });
         setIsLoading(false);
       });
-  }, [searchParams]);
+  }, [searchParams, isLoading]);
 
   useEffect(() => {
+    setIsLoading(true)
     fetch("https://hannybees-news-app.herokuapp.com/api/users")
       .then((response) => {
         return response.json();
@@ -59,10 +64,11 @@ export default function AllArticles() {
         setAuthorData(data.users);
       });
     setIsLoading(false);
-  }, []);
+  }, [authorData, isLoading]);
 
   const HandleSortBy = (event) => {
     event.preventDefault();
+    setIsLoading(true)
 if(event.target.value === "created_atO"){
   setSearchParams({sort_by: "created_at", order: "ASC"})
 } else if (event.target.value === "votesL"){
@@ -70,12 +76,14 @@ if(event.target.value === "created_atO"){
 }else{
   setSearchParams({sort_by: event.target.value});
 }
+setIsLoading(false)
   };
 
 
 
   return (
     <div>
+      {isLoading && <LoadingSpinner/> }
       <h1 className ="allArticlesPageTitle"> All Articles &#128029; </h1>
       <div className="itemCard">
       <div className="sortby_container">
@@ -102,7 +110,7 @@ if(event.target.value === "created_atO"){
               <h2 className="allArticles_title">{article.title}</h2>
               <p className="allArticles_body">{article.body} </p>
               <button
-                className={`${article.article_id}-button`}
+                className="articleButton"
                 onClick={() => navigate(`/${article.article_id}`)}
               >
                 {" "}

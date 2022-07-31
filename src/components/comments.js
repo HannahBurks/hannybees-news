@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useState} from "react";
 import '../App.css';
+import LoadingSpinner from "./LoadSpinner";
 
 
 
@@ -26,6 +27,7 @@ const userRef = {
 
 
  useEffect(() => {
+     setIsLoading(true)
     fetch(`https://hannybees-news-app.herokuapp.com/api/articles${articleIdRoute}/comments`).then((response) => {
         return response.json();
     }).then((data) => {
@@ -57,7 +59,7 @@ const userRef = {
     setErr('Something went wrong, please try again.')
     setIsLoading(false)
     })
-    
+
     }  
     const handleDelete = (event) => {
     event.preventDefault()
@@ -75,21 +77,24 @@ const userRef = {
      })
      setIsLoading(false);
  })
-},[commentData]);
+},[commentData], isLoading);
     }
 
 return(
 
 <div>
+    {isLoading && <LoadingSpinner/>}
     <h2 className ="comment_section_header">Comment section</h2>
 <div className = "commentsContainer">
 {commentData.map((comment)=> {
     return (<div className = "comment_container">
         <img className = 'commenter_avatar'src={getAvatarUrl(comment.author)}/>
         <h5 className = "commenter_username">{comment.author}</h5>
+        
+        <h5 className = "commenter_votes">Comment votes: {comment.votes}</h5>
         {comment.author === "cooljmessy"? <button className ={`${comment.comment_id}`} onClick={handleDelete}>Delete Comment</button>: null}
-        <h5 className = "commenter_votes">Comment votes:{comment.votes}</h5>
     <p className="comment_body" >{comment.body}</p>
+    
     </div>
     )
 })}

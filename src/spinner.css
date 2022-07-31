@@ -1,0 +1,26 @@
+
+  .loading-spinner {
+      margin:auto;
+      text-align: center;
+    width: 20px;
+    height: 20px;
+    border: 5px solid #252523;
+    border-top: 5px solid #383636;
+    border-radius: 50%;
+    margin-top: 6px;
+    animation: spinner 1.5s linear infinite;
+  }  
+  
+  .spinner-container {    
+      height: 15px;
+    padding: 10px;
+  }
+
+  @keyframes spinner {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
