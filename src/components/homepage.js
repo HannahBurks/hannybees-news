@@ -11,7 +11,7 @@ export default function Homepage(){
 
     return(
            <div>
-               <h1>ARTICLE CATAGORIES</h1>
+               <h1 className="homepage-title">ARTICLE CATAGORIES</h1>
                <div className='hexbuttonContainer'>
 <div className='hexbuttons'>
   <div className='hexr'>
@@ -30,8 +30,8 @@ export default function Homepage(){
 </div>
 </div>
 <div className="aboutUsSection">
-<h3>ABOUT US</h3>
-<p className ="introduction">Welcome to Hannybee's News, the only news platform that has a deep concern and passion for bees! 
+<h3 className ="aboutUsTitle">ABOUT US</h3>
+<p className ="introduction">Welcome to Hannybee News, the only news platform that has a deep concern and passion for bees! 
 Bees are integral to our planet in order for life to thrive. Bees work hard in groups to gather pollen, a bit how journalist work to gather information for news collums!
 We are inspired by bees work ethic and unification. We believe the world would be a better place if humans were to also incoperate these values, rather than being deeply divided. 
 One way to do this, is to have platforms that allow us to express views, engage in discussion and invoke mutual understanding in a calm and compassionate way...this is where Hannybee's news comes in! 

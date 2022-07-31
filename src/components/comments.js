@@ -55,6 +55,7 @@ const userRef = {
     .then((json) => setCommentData((currData)=>[json.comment,...currData])).catch((err)=>{
     setNewComment('')
     setErr('Something went wrong, please try again.')
+    setIsLoading(false)
     })
     
     }  

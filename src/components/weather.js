@@ -2,24 +2,42 @@
  
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Helmet } from "react-helmet"
+import { useState } from 'react';
+import {WeatherWidget} from "@daniel-szulc/react-weather-widget";
+import { Timeline } from 'react-twitter-widgets'
 export default function Weather(){
-
+  
+   
 
     return(
     <div>
-    <h1>Weather and Travel</h1>
-    <div>
-    <a className="weatherwidget-io" href="https://forecast7.com/en/51d51n0d13/london/" data-label_1="LONDON" data-theme="beige" >London</a>
-    <script>{
-    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js')}
-    </script>
+    <h1 className ="weatherHeader">Weather and Travel</h1>
+    <div className ="weatherWidget">
+        <div></div>
+    <WeatherWidget
+        autoLocate="gps"
+    />
     </div>
-      <Helmet>
-    <div style="width:260px">
-    <script language="JavaScript" src="https://www.tfl.gov.uk/tfl/syndication/widgets/serviceboard/embeddable/serviceboard-iframe-stretchy.js"></script>
+    <h2 className="TravelUpdates"> Travel updates from TFL : </h2>
+    <div className = "Timeline">
+    <Timeline className="tfl"
+  dataSource={{
+    sourceType: 'profile',
+    screenName: 'TFL'
+  }}
+  options={{
+    height: '300px',
+    theme: 'dark',
+    width: '350px',
+    
+  }}
+  renderError={(_err) => <p>Could not load timeline</p>}
+/>
+</div>
+
+
     </div>
-    </Helmet>
-    </div>
+   
     )
+   
     }

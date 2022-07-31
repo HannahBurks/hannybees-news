@@ -51,7 +51,9 @@ import { useEffect } from "react";
     
     return (
              <div className ={`${categoryName}itemCard`}>
-            <h2 className={`${categoryName}Header`}> {capitalizedCategory} Articles</h2>
+              
+            <h1 className={`${categoryName}Header`}> {capitalizedCategory} Articles</h1>
+          
              {articleData.map((article) => {
                 return (
                   <div key={article.article_id} className="Partone_itemCard">

@@ -27,6 +27,6 @@ export default function ActiveUser(){
     return (
         <div className='user_card--active'>
    <img className= 'user_avatar--active' src={userDetails.avatar_url} alt={`${userDetails.name} avatar`} />
-   <h3>{userDetails.name}</h3>
+   <h3 className ="userName">{userDetails.name}</h3>
         </div>
     )}

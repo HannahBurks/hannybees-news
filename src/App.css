@@ -1,13 +1,16 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Playfair+Display+SC&family=Vidaloka&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
 .App {
   text-align: center;
 }
 
 .header-cotainer{
   display: flex;
-  background-color: #fff4ac;
+  background-color: #4e4639e1;
   flex-direction: row;
   justify-content: space-between;
   align-content:center;
@@ -19,35 +22,26 @@
   align-items: baseline;
   align-self:flex-start;
  flex-direction: row;
-margin-left: 15px;
-margin-top:25px;
-border-radius: 15px;
-box-shadow: 5px 5px 5px rgb(182, 170, 94);
+margin-left: 10px;
+margin-top:20px;
+border-radius: 10px;
+box-shadow: 15px 15px 15px rgb(0, 0, 0);
+width: 90%;
+margin-bottom: 20px
 }
 
-.mainHeader{
-  display: flex;
-  text-align: center;
-  flex-direction: row;
-  margin-top:60px;
-font-size: x-large;
-margin-left: 15px;
-font-family: 'Playfair Display SC', serif;
-font-weight:bolder;
-background-color: #ffffffa9;
-margin-bottom:80px; 
-box-shadow: 5px 5px 5px rgba(182, 170, 94, 0.829);
 
-}
+
+
 
 .user_avatar--active{
   vertical-align: middle;
-  width: 50px;
-  height: 50px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
-  border-color: #000000;
+  border-color: #ffffff;
   border-style: solid;
-  box-shadow: 5px 5px 5px rgb(182, 170, 94);
+  box-shadow: 5px 5px 5px rgb(5, 5, 5);
 
 }
 .h6{
@@ -96,19 +90,19 @@ background: linear-gradient(90deg, rgba(255,228,32,1) 0%, rgba(255,189,26,1) 35%
 
 .allArticles_avatar{
   vertical-align: middle;
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
-  border-color: #000000;
+  border-color: #ffffff;
   border-style: solid;
-  box-shadow: 5px 5px 5px rgb(182, 170, 94);
+  box-shadow: 5px 5px 5px rgb(7, 7, 7);
   margin-top: 10px;
 }
 
 .itemCard{
   display: flex;
   flex-direction: column;
- background-image: url('https://static.vecteezy.com/system/resources/thumbnails/005/018/822/small/hexagon-mosaic-background-abstract-orange-honeycomb-free-vector.jpg');
+ 
 
  
 }
@@ -123,7 +117,9 @@ background: linear-gradient(90deg, rgba(255,228,32,1) 0%, rgba(255,189,26,1) 35%
   padding-top:30px;
   padding-left:10px;
   padding-right:10px;
-background-color:  #fff4ac;;
+background-color:  #2f2821d8;
+color: white;
+border-radius: 20px ;
 }
 
 .article_page-button{
@@ -134,13 +130,35 @@ background-color:  #fff4ac;;
   display: flex;
   align-items: center;
   flex-direction: column;
- 
 overflow-y: scroll;
 background-color:#190e03c3 ;
 padding-bottom: 5%;
 
+
 }
 
+.all-articles-container{
+  overflow-y: scroll;
+  height: 750px;
+}
+
+.allArticles_author{
+  margin-top: 10px;
+  font-family: 'Roboto', sans-serif;
+  font-size: large;
+}
+
+.allArticles_body{
+  font-family: 'Roboto', sans-serif;
+  font-size: larger;
+}
+
+.allArticles_title{
+  margin-top: -20px;
+  font-family: 'Raleway', sans-serif;
+  font-size: x-large;
+  font-weight: bold;
+}
 
 
 .singleArticle_avatar{
@@ -259,19 +277,19 @@ a {text-decoration: none;}
 }
 
 .cookingitemCard{
-  display: flex;
-  flex-direction: column;
-  background-image: url(https://st3.depositphotos.com/28989096/34087/v/950/depositphotos_340879776-stock-illustration-kitchen-elements-cute-doodle-hand.jpg?forcejpeg=true);
+  background-image: url(https://static.vecteezy.com/system/resources/thumbnails/000/532/223/small/7-01.jpg);
   background-size: contain;
 
 
 }
 
 
+
+
 .codingitemCard{
   display: flex;
   flex-direction: column;
-  background-image: url(https://thumbs.dreamstime.com/b/programming-yellow-line-tile-pattern-vector-illustration-outline-seamless-background-coding-resources-82682683.jpg);
+  background-image: url(https://static.vecteezy.com/system/resources/thumbnails/000/532/223/small/7-01.jpg);
   background-size: contain;
 }
 
@@ -279,7 +297,7 @@ a {text-decoration: none;}
 .footballitemCard{
   display: flex;
   flex-direction: column;
-  background-image: url('https://image.shutterstock.com/image-illustration/illustration-pattern-soccer-balls-on-260nw-1954911397.jpg');
+  background-image: url(https://static.vecteezy.com/system/resources/thumbnails/000/532/223/small/7-01.jpg);
   background-size:contain;
 
 }
@@ -292,11 +310,54 @@ a {text-decoration: none;}
 }
 
 .cookingHeader{
-  display: flex;
-  flex-direction: column;
-  background-color: #f8f0b6;
-
+  font-family: 'Raleway', sans-serif;
+font-size: 40px;
+color: #000000;
+background-image: url(./images/cooking\ \(1\).png);
+background-size: cover;
+text-align: center;
+padding:10%;
+margin-left: 20%;
+margin-right: 20%;
+border-radius: 20px;
+border-color: #000000;
+border-style: solid;
+ box-shadow: 15px 15px 15px rgb(0, 0, 0);
 }
+
+.codingHeader{
+  font-family: 'Raleway', sans-serif;
+font-size: 40px;
+color: #000000;
+background-image: url(./images/coding.png);
+background-size: cover;
+text-align: center;
+padding:10%;
+margin-left: 20%;
+margin-right: 20%;
+border-radius: 20px;
+border-color: #000000;
+border-style: solid;
+ box-shadow: 15px 15px 15px rgb(0, 0, 0);
+}
+
+.footballHeader{
+  font-family: 'Raleway', sans-serif;
+font-size: 40px;
+color: #040303;
+background-image: url(./images/football5.png);
+background-size:cover;
+text-align: center;
+padding:10%;
+margin-left: 20%;
+margin-right: 20%;
+border-radius: 20px;
+border-color: #000000;
+border-style: solid;
+ box-shadow: 15px 15px 15px rgb(0, 0, 0);
+}
+
+
 
 .codingHeader{
   display: flex;
@@ -592,19 +653,24 @@ background-size: 1000px;
 .aboutUsSection{
   display: flex;
   flex-direction: column;
-  background-color: rgba(194, 160, 96, 0.832);
+  background-color: #4e4639e1;
   margin-top: 80px;
-  width:80%;
-margin-left:10%;
+  width:90%;
+margin-left:5%;
+margin-right:5%;
 padding-bottom: 5%;
 margin-bottom:10%;
+
 }
 
 .introduction{
   padding-left: 5%;
   padding-right: 5%;
-  font-size: large;
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-size: larger;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+
+ 
 }
 
 .article_title{
@@ -688,16 +754,20 @@ color:rgba(12, 8, 1, 0.736)
 
 .sortby_container{
 
-background-color: rgba(255, 254, 254, 0.808);
+
 flex-direction: row;
 text-align: center;
 justify-content: flex-end;
 margin-left: 40%;
 margin-right: 40%;
  margin-top: 5%;
- font-size: large;
+ font-size: larger;
+ font-family: 'Raleway', sans-serif;
+ font-weight: bold;
 
 }
+
+
 
 .loadingMessage{
 color: #0d0505;
@@ -707,3 +777,46 @@ background-color: #fff9f9;
 .weatherwidget-io{
 margin-top: 3%;
 }
+
+.userName{
+  color: white;
+  font-family: 'Raleway', sans-serif;
+  margin-top: 8px;
+}
+
+.homepage-title{
+  margin-bottom: -6px;
+  font-family: 'Roboto', sans-serif;
+
+}
+
+.aboutUsTitle{
+  color: white;
+  font-family: 'Roboto', sans-serif;
+}
+
+.allArticlesPageTitle{
+  font-family: 'Raleway', sans-serif;
+  margin-bottom: -5%;
+}
+
+.weatherWidget{
+  display:flex;
+ justify-content: center;
+
+}
+.weatherHeader{
+  font-family: 'Raleway', sans-serif; 
+  background-color: #0000008f;
+  padding: 4%;
+  color: white;
+margin-left:20%;
+margin-right:20%;
+border-radius: 20px;
+}
+
+.TravelUpdates{
+  font-family: 'Raleway', sans-serif; 
+  
+}
+
