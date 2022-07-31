@@ -373,6 +373,7 @@ border-style: solid;
   display:flex;
   flex-direction: row;
   justify-content: center;
+  margin-left: -1%;
 }
 
 .hexagonbutton:hover{
@@ -662,6 +663,8 @@ margin-left:5%;
 margin-right:5%;
 padding-bottom: 5%;
 margin-bottom:10%;
+border-radius: 20px;
+box-shadow: 10px 10px 10px rgb(15, 11, 1);
 
 }
 
@@ -795,6 +798,7 @@ margin-top: 3%;
 .aboutUsTitle{
   color: white;
   font-family: 'Roboto', sans-serif;
+  font-size: x-large;
 }
 
 .allArticlesPageTitle{
