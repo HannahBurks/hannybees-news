@@ -79,7 +79,7 @@ if(event.target.value === "created_atO"){
       <h1 className ="allArticlesPageTitle"> All Articles </h1>
       <div className="itemCard">
       <div className="sortby_container">
-      <label for="sortBy"> Sort by:</label>
+      <label for="sortBy"> Sort by: </label>
       <select id="sort" name="sortby"onChange={HandleSortBy}>
         <option value="author">Author</option>
         <option value="title">Title</option>
