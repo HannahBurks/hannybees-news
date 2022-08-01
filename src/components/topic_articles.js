@@ -1,16 +1,14 @@
 import { useEffect } from "react";
-    import {Routes, Route, useNavigate, useLocation} from 'react-router-dom';
+    import {useNavigate, useLocation} from 'react-router-dom';
     import { useState } from "react";
     import '../App.css';
-    import Article from './article'
 import LoadingSpinner from "./LoadSpinner";
     
 
     export default function Categories(){
         const [articleData, setArticleData] = useState([])
-        const [authorData, setAuthorData] = useState([])
         const [isLoading, setIsLoading] = useState(true);
-        const[userInfo, setUserInfo] = useState({})
+       
     
         
         const navigate = useNavigate();
@@ -46,7 +44,7 @@ import LoadingSpinner from "./LoadSpinner";
             })
             setIsLoading(false);
         })
-    },[]);
+    },[categoryName]);
     
     const capitalizedCategory = categoryName[0].toUpperCase() + categoryName.substring(1)
     
@@ -55,11 +53,10 @@ import LoadingSpinner from "./LoadSpinner";
       {isLoading && <LoadingSpinner/>}
              <div className ={`${categoryName}itemCard`}>
             <h1 className={`${categoryName}Header`}> {capitalizedCategory} Articles</h1>
-          
              {articleData.map((article) => {
                 return (
                   <div key={article.article_id} className="Partone_itemCard">
-                    <img className = 'allArticles_avatar'src={getAvatarUrl(article.author)}/>
+                    <img className = 'allArticles_avatar'src={getAvatarUrl(article.author)} alt ={`${article.author} avatar`}/>
                     <h6 className = "allArticles_author" >{article.author} </h6>
                     <h2 className="allArticles_title">{article.title}</h2>
                     <p className = "allArticles_body">{article.body} </p>
