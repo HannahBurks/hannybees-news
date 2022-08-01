@@ -1,9 +1,8 @@
 
  
 import React from 'react';
-import ReactDOM from 'react-dom';
 
-import { useState } from 'react';
+
 import {WeatherWidget} from "@daniel-szulc/react-weather-widget";
 
 import { Timeline } from 'react-twitter-widgets';

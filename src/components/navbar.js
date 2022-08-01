@@ -1,5 +1,5 @@
 import {Link} from "react-router-dom";
-import Weather from "./weather";
+
 
 function NavBar() {
 return (
