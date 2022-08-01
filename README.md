@@ -1,6 +1,9 @@
-# Getting Started with Create React App
+HANNYBEE-NEWS ~ Website link - https://hannybee-news.netlify.app/
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Hello and welcome to my Hannybee-news react app. This app is a news app that provides articles on three topics (Cooking, Coding and Football). You are able to either view by catergory or view all articles (which you can then select sort by options for). 
+
+There is also the ability to post comments, up and down vote articles and delete any comments posted by the logged in user. In this case, a user has been already logged in and defined for ease of use (Peter Messy - whom you may recognise from Mr Men!) Along with this, I have provided a page with a Weather widget and TFL twitter updates. The data used to create these article posts, comes from a previous API I worked on: https://hannybees-news-app.herokuapp.com/api which contains options to POST, GET, PATCH, DELETE and accepts queries such as topic, sortby and order by. This App was created using Node Version V16.15.1, this is the version I therefore recommend using to run this. 
+
 
 ## Available Scripts
 
@@ -39,32 +42,3 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
