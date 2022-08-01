@@ -1,9 +1,8 @@
 import { useEffect } from "react";
-import { Routes, Route, useNavigate, useParams } from "react-router-dom";
+import {useNavigate } from "react-router-dom";
 import { useState } from "react";
 import "../App.css";
 import "../spinner.css";
-import Article from "./article";
 import { useSearchParams } from "react-router-dom";
 import LoadingSpinner from "./LoadSpinner";
 
@@ -13,9 +12,8 @@ export default function AllArticles() {
   const [articleData, setArticleData] = useState([]);
   const [authorData, setAuthorData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [userInfo, setUserInfo] = useState({});
   const [searchParams, setSearchParams] = useSearchParams();
-  const [order, setOrder] = useSearchParams({});
+  const [err, setErr] = useState(null)
   const navigate = useNavigate();
 
 
@@ -44,15 +42,21 @@ export default function AllArticles() {
       `https://hannybees-news-app.herokuapp.com/api/articles?${searchParams}`
     )
       .then((response) => {
+
+        if(response.status === 404){
+          setErr(err)
+        }
         return response.json();
       })
       .then((data) => {
         setArticleData(() => {
           return data.articles;
-        });
-        setIsLoading(false);
-      });
-  }, [searchParams, isLoading]);
+        })
+      }).catch((err) => {
+        setErr(err)
+      })
+      setIsLoading(false)
+  }, [searchParams, isLoading, err]);
 
   useEffect(() => {
     setIsLoading(true)
@@ -62,9 +66,16 @@ export default function AllArticles() {
       })
       .then((data) => {
         setAuthorData(data.users);
-      });
-    setIsLoading(false);
-  }, [authorData, isLoading]);
+
+      }).catch((err)=>{
+
+        setErr(err)
+        
+      })
+      setIsLoading(false)
+  }, [authorData, isLoading, err])
+  
+ 
 
   const HandleSortBy = (event) => {
     event.preventDefault();
@@ -83,7 +94,8 @@ setIsLoading(false)
 
   return (
     <div>
-      {isLoading && <LoadingSpinner/> }
+{err? err: null}
+      {isLoading? <LoadingSpinner/> : null}
       <h1 className ="allArticlesPageTitle"> All Articles &#128029; </h1>
       <div className="itemCard">
       <div className="sortby_container">
@@ -102,7 +114,7 @@ setIsLoading(false)
         {articleData.map((article) => {
           return (
             <div key={article.article_id} className="Partone_itemCard">
-              <img
+              <img alt={`${article.article_author} avatar`}
                 className="allArticles_avatar"
                 src={getAvatarUrl(article.author)}
               />

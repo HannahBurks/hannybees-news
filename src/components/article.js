@@ -8,10 +8,8 @@ import LoadingSpinner from "./LoadSpinner.js";
 export default function Article(){
     const articleIdRoute = window.location.pathname
 const [articleData, setArticleData] = useState([])
-const[commentData, setCommentData] = useState([])
 const [isLoading, setIsLoading] = useState(true)
-const [voteCount, setVoteCount] = useState(0)
-const[err, setErr]= useState('')
+const[err, setErr]= useState(null)
 
 function getAvatarUrl(user){
     const userRef = {
@@ -32,25 +30,31 @@ function getAvatarUrl(user){
         fetch(`https://hannybees-news-app.herokuapp.com/api/articles${articleIdRoute}`).then((response) => {
             return response.json();
         }).then((data) => {
+                if(data.status === 404){
+          setErr(err)
+        }
                 setArticleData(() => {
                     return data.article
                 })
-                setIsLoading(false);
             
+            }).catch((err) => {
+
+                setErr(err)
             })
-            
-        },[isLoading]);
+            setIsLoading(false);
+        },[isLoading, err, articleIdRoute]);
 
 
 
     return (
         <div>
-        {isLoading && <LoadingSpinner/> }
+            {err? err:null}
+        {isLoading? <LoadingSpinner/>:null }
 <div className='Individual_article_container'>
     <div className='Article_container'>
 
 <h2 className ="article_title">{articleData.title}</h2>
-<img className = 'singleArticle_avatar'src={getAvatarUrl(articleData.author)}/>
+<img className = 'singleArticle_avatar' alt={`${articleData.author} avatar`}src={getAvatarUrl(articleData.author)}/>
 <h3 className = "author_name"> Author: {articleData.author}</h3>
 <p className ="error_message">{err}</p>
 <Votes articleData={articleData} setArticleData={setArticleData} articleIdRoute={articleIdRoute}/>

@@ -34,10 +34,13 @@ const userRef = {
             setCommentData(() => {
                return data
                 
+            }).catch((err) =>{
+                setErr(err)
             })
-            setIsLoading(false);
+        
         })
-    },[]);
+        setIsLoading(false);
+    },[articleIdRoute]);
 
 
     const handleSubmit = (event) => {
@@ -73,22 +76,24 @@ const userRef = {
 }).then((data) => {
     setCommentData(() => {
         return data
-
+     }).catch((err) => {
+         setErr(err)
      })
-     setIsLoading(false);
  })
+ setIsLoading(false)
 },[commentData], isLoading);
     }
 
 return(
 
 <div>
-    {isLoading && <LoadingSpinner/>}
+{err? err: null}
+    {isLoading? <LoadingSpinner/>: null}
     <h2 className ="comment_section_header">Comment section</h2>
 <div className = "commentsContainer">
 {commentData.map((comment)=> {
     return (<div className = "comment_container">
-        <img className = 'commenter_avatar'src={getAvatarUrl(comment.author)}/>
+        <img  alt={`${comment.author} avatar`}className = 'commenter_avatar'src={getAvatarUrl(comment.author)}/>
         <h5 className = "commenter_username">{comment.author}</h5>
         
         <h5 className = "commenter_votes">Comment votes: {comment.votes}</h5>

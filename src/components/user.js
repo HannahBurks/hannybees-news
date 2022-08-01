@@ -1,12 +1,12 @@
 import { useEffect } from "react";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+
 import '../App.css';
 
 export default function ActiveUser(){
     const [userDetails, setUserDetails] = useState('')
-    const navigate = useNavigate()
     
+ 
 
     useEffect(() => {
     fetch('https://hannybees-news-app.herokuapp.com/api/users').then((response) => {
@@ -20,8 +20,9 @@ export default function ActiveUser(){
         setUserDetails(myUser[0])
         
     })
+    })
     
-})
+
 
 
     return (

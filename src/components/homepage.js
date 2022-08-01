@@ -1,16 +1,20 @@
-import { Navigate } from 'react-router-dom';
+
 import '../App.css';
-import {Routes, Route, useNavigate} from 'react-router-dom';
-import { useEffect } from 'react';
+import {useNavigate} from 'react-router-dom';
+
 
 
 export default function Homepage(){
 
+
+
     
     const navigate = useNavigate();
 
+
     return(
            <div>
+
                <h1 className="homepage-title">  ARTICLE CATAGORIES </h1>
                <div className='hexbuttonContainer'>
 <div className='hexbuttons'>
